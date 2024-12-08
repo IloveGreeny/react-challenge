@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {toggleFavourite} from '../../features/products/productsSlice.ts';
 import {RootState} from "../../types/types";
@@ -29,12 +29,12 @@ export default function Product() {
             >
                 {favourites.includes(product.id) ? "❤️" : "♡"}
             </button>
-            <button
+            <Link
                 className="p-2 rounded-full bg-white shadow-md text-red-600 hover:bg-gray-100 focus:outline-none"
-                onClick={() => (window.location.href = "/")}
+                to="/"
             >
                     Back to Products
-            </button>
+            </Link>
         </div>
     </div>
     )

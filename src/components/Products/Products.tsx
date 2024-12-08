@@ -71,7 +71,7 @@ export default function Products() {
                     </div>
                 ))}
             </div>
-            <div className="mt-8">
+            <div className="mt-8 mr-3">
                 <Link to="/favourites" className="mt-8 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all">
                     View Favourites
                 </Link>

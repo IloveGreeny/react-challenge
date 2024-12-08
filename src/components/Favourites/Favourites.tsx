@@ -1,5 +1,6 @@
 import { useSelector,useDispatch } from 'react-redux';
 import { toggleFavourite } from '../../features/products/productsSlice.ts';
+import {Link} from "react-router-dom";
 
 export default function Favourites() {
     const dispatch = useDispatch();
@@ -17,8 +18,8 @@ export default function Favourites() {
                         key={product.id}
                         className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
                     >
-                        <a
-                            href={`/products/${product.id}`}
+                        <Link
+                            to={`/products/${product.id}`}
                             className="block p-4 cursor-pointer"
                         >
                             <img
@@ -29,7 +30,7 @@ export default function Favourites() {
                             <h3 className="mt-4 text-xl font-bold text-gray-800 group-hover:text-indigo-600">
                                 {product.name}
                             </h3>
-                        </a>
+                        </Link>
                         <div className="absolute top-4 right-4 flex gap-2">
                             <button
                                 className="p-2 rounded-full bg-white shadow-md text-red-600 hover:bg-gray-100 focus:outline-none"

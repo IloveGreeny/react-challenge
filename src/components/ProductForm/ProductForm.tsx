@@ -13,8 +13,7 @@ export default function ProductForm() {
         e.preventDefault();
         if (name && image) {
             dispatch(createProduct({ name, image, isUserCreated: true }));
-
-            navigate('/products');
+            navigate('/');
         } else {
             alert('Please provide valid product name and image URL');
         }

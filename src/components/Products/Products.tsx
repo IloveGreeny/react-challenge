@@ -38,8 +38,8 @@ export default function Products() {
                         key={product.id}
                         className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
                     >
-                        <a
-                            href={`/products/${product.id}`}
+                        <Link
+                            to={`/products/${product.id}`}
                             className="block p-4 cursor-pointer"
                         >
                             <img
@@ -50,7 +50,7 @@ export default function Products() {
                             <h3 className="mt-4 text-xl font-bold text-gray-800 group-hover:text-indigo-600">
                                 {product.name}
                             </h3>
-                        </a>
+                        </Link>
 
                         <div className="absolute top-4 right-4 flex gap-2">
                             <button
@@ -71,13 +71,15 @@ export default function Products() {
                     </div>
                 ))}
             </div>
+            <div className="mt-8">
+                <Link to="/favourites" className="mt-8 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all">
+                    View Favourites
+                </Link>
+                <Link to="/create-product" className="mt-8 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all">
+                    Create Product
+                </Link>
+            </div>
 
-            <Link to="/favourites" className="mt-8 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all">
-                View Favourites
-            </Link>
-            <Link to="/create-product" className="mt-8 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-all">
-                Create Product
-            </Link>
         </div>
     );
 }
